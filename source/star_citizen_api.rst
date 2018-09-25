@@ -15,10 +15,10 @@ Alle Statistiken
 ^^^^^^^^^^^^^^^^
 |get|
 
-|api_endpoint| */api/stats*
+|api_endpoint| ``/api/stats``
 
 
-Query Parameter:
+|query_param|
 
 =========  =======      =======================================================================================================================  ==============  ========  ========  ========
 Parameter  Typ          Beschreibung                                                                                                             Erlaubte Werte  Optional  Beispiel  Standard
@@ -28,9 +28,8 @@ limit      integer      Limitiert die Anzahl der Daten auf die angegebene Zahl. 
 =========  =======      =======================================================================================================================  ==============  ========  ========  ========
 
 
-Beispielausgabe:
-
 .. code-block:: json
+    :caption: |caption_response_no_query_params|
 
     {
       "data": [
@@ -51,7 +50,7 @@ Beispielausgabe:
         }
       ],
       "meta": {
-        "processed_at": "2018-08-27 18:14:12",
+        "processed_at": "2018-08-01 00:00:00",
         "pagination": {
           "total": 1957,
           "count": 10,
@@ -59,7 +58,37 @@ Beispielausgabe:
           "current_page": 1,
           "total_pages": 196,
           "links": {
-            "next": "https://api.star-citizen.wiki/api/stats?page=2"
+            "next": "https:\/\/api.star-citizen.wiki\/api\/stats?page=2"
+          }
+        }
+      }
+    }
+
+
+|api_endpoint| ``/api/stats?limit=1``
+
+.. code-block:: json
+    :caption: Ausgabe der Anfrage mit Limit Parameter = 1:
+
+    {
+      "data": [
+        {
+          "funds": "192674121.56",
+          "fans": 2088028,
+          "fleet": 1639454,
+          "timestamp": "2018-08-26 20:00:03"
+        }
+      ],
+      "meta": {
+        "processed_at": "2018-08-01 00:00:00",
+        "pagination": {
+          "total": 1957,
+          "count": 1,
+          "per_page": 1,
+          "current_page": 1,
+          "total_pages": 1957,
+          "links": {
+            "next": "https:\/\/api.star-citizen.wiki\/api\/stats?page=2"
           }
         }
       }
@@ -71,11 +100,10 @@ Aktuelle Statistik
 ^^^^^^^^^^^^^^^^^^
 |get|
 
-|api_endpoint| */api/stats/latest*
-
-Beispielausgabe:
+|api_endpoint| ``/api/stats/latest``
 
 .. code-block:: json
+    :caption: |caption_response|
 
     {
       "data": {
@@ -85,7 +113,7 @@ Beispielausgabe:
         "timestamp": "2018-08-26 20:00:03"
       },
       "meta": {
-        "processed_at": "2018-08-27 18:18:01"
+        "processed_at": "2018-08-01 00:00:00"
       }
     }
 
@@ -97,17 +125,15 @@ API zur Abfrage der Raumschiffe aus der Ship Matrix ( https://robertsspaceindust
 
 Ein Import der Daten erfolgt wöchentlich, oder bei der Herausgabe eines neuen Raumschiffes.
 
-|base_endpoint| */api/vehicles*
-
 
 Alle Raumschiffe
 ^^^^^^^^^^^^^^^^
 |get|
 
-|api_endpoint| */api/vehicles/ships*
+|api_endpoint| ``/api/ships``
 
 
-Query Parameter:
+|query_param|
 
 =========  =======      =======================================================================================================================  ==============  ========  ========  ========
 Parameter  Typ          Beschreibung                                                                                                             Erlaubte Werte  Optional  Beispiel  Standard
@@ -118,11 +144,8 @@ locale     string       Sprache der zurückgegebenen Daten. Ersatzsprache ist en
 =========  =======      =======================================================================================================================  ==============  ========  ========  ========
 
 
-Beispielausgabe (Ohne Lokalisierung):
-
-**Anfrage URL**: */api/vehicles/ships*
-
 .. code-block:: json
+    :caption: |caption_response_no_query_params|
 
     {
       "data": [
@@ -196,7 +219,7 @@ Beispielausgabe (Ohne Lokalisierung):
         }
       ],
       "meta": {
-        "processed_at": "2018-08-27 18:40:20",
+        "processed_at": "2018-08-01 00:00:00",
         "pagination": {
           "total": 118,
           "count": 5,
@@ -204,18 +227,17 @@ Beispielausgabe (Ohne Lokalisierung):
           "current_page": 1,
           "total_pages": 24,
           "links": {
-            "next": "https://api.star-citizen.wiki/api/vehicles/ships?page=2"
+            "next": "https:\/\/api.star-citizen.wiki\/api\/ships?page=2"
           }
         }
       }
     }
 
 
-Beispielausgabe (Lokalisierung Deutsch):
-
-**Anfrage URL**: */api/vehicles/ships?locale=de_DE*
+|api_endpoint| ``/api/ships?locale=de_DE``
 
 .. code-block:: json
+    :caption: |caption_response_german_localisation|
 
     {
       "data": [
@@ -269,7 +291,7 @@ Beispielausgabe (Lokalisierung Deutsch):
         }
       ],
       "meta": {
-        "processed_at": "2018-08-27 18:42:36",
+        "processed_at": "2018-08-01 00:00:00",
         "pagination": {
           "total": 118,
           "count": 5,
@@ -277,7 +299,7 @@ Beispielausgabe (Lokalisierung Deutsch):
           "current_page": 1,
           "total_pages": 24,
           "links": {
-            "next": "https:\/\/api.star-citizen.wiki\/api\/vehicles\/ships?page=2"
+            "next": "https:\/\/api.star-citizen.wiki\/api\/ships?page=2"
           }
         }
       }
@@ -288,12 +310,12 @@ Einzelnes Raumschiff
 ^^^^^^^^^^^^^^^^^^^^
 |get|
 
-|api_endpoint| */api/vehicles/ships/{Raumschiff_Name}*
+|api_endpoint| ``/api/ships/{Raumschiff_Name}``
 
 |url_param| Der Name des Raumschiffes in URL enkodierter Form. Zum Beispiel ``Aurora+CL``
 
 
-Query Parameter:
+|query_param|
 
 =========  =======      =======================================================================================================================  ==============  ========  ========  ========
 Parameter  Typ          Beschreibung                                                                                                             Erlaubte Werte  Optional  Beispiel  Standard
@@ -302,11 +324,10 @@ locale     string       Sprache der zurückgegebenen Daten. Ersatzsprache ist en
 =========  =======      =======================================================================================================================  ==============  ========  ========  ========
 
 
-Beispielausgabe (Ohne Lokalisierung):
-
-**Anfrage URL**: */api/vehicles/ships/300i*
+|api_endpoint| ``/api/ships/300i``
 
 .. code-block:: json
+    :caption: |caption_response_no_query_params|
 
     {
       "data": {
@@ -369,16 +390,15 @@ Beispielausgabe (Ohne Lokalisierung):
         }
       },
       "meta": {
-        "processed_at": "2018-08-27 18:55:10"
+        "processed_at": "2018-08-01 00:00:00"
       }
     }
 
 
-Beispielausgabe (Lokalisierung Deutsch):
-
-**Anfrage URL**: */api/vehicles/ships/300i?locale=de_DE*
+|api_endpoint| ``/api/ships/300i?locale=de_DE``
 
 .. code-block:: json
+    :caption: |caption_response_german_localisation|
 
     {
       "data": {
@@ -424,16 +444,15 @@ Beispielausgabe (Lokalisierung Deutsch):
         }
       },
       "meta": {
-        "processed_at": "2018-08-27 18:55:48"
+        "processed_at": "2018-08-01 00:00:00"
       }
     }
 
 
-Beispielausgabe (Fehlerhafter Schiffsname):
-
-**Anfrage URL**: */api/vehicles/ships/300*
+|api_endpoint| ``/api/ships/300``
 
 .. code-block:: json
+    :caption: |caption_response_404|
 
     {
       "message": "No Results for Query '300'",
@@ -445,13 +464,12 @@ Suche
 ^^^^^
 |post|
 
-|api_endpoint| */api/vehicles/ships/search*
+|api_endpoint| ``/api/ships/search``
 
-**Request Body**: *query*
-
-Beispielanfrage:
+**Request Body**: ``query``
 
 .. code-block:: php
+    :caption: Beispielanfrage:
 
     $client = new GuzzleHttp\Client([
         'timeout' => 3.0,
@@ -464,15 +482,14 @@ Beispielanfrage:
 
     $res = $client->request(
         'POST',
-        '/vehicles/ships/search',
+        '/ships/search',
         [
             'query' => 'Aurora'
         ]
     );
 
-Ausgabe der Anfrage:
-
 .. code-block:: json
+    :caption: |caption_response|
 
     {
       "data": [
@@ -502,7 +519,7 @@ Ausgabe der Anfrage:
         }
       ],
       "meta": {
-        "processed_at": "2018-08-27 19:04:13",
+        "processed_at": "2018-08-01 00:00:00",
         "pagination": {
           "total": 5,
           "count": 5,
@@ -515,9 +532,8 @@ Ausgabe der Anfrage:
     }
 
 
-Ausgabe einer fehlerhaften Anfrage:
-
 .. code-block:: json
+    :caption: |caption_response_404|
 
     {
       "message": "No Results for Query 'not existent'",
@@ -532,17 +548,15 @@ API zur Abfrage der Bodenfahrzeuge aus der Ship Matrix ( https://robertsspaceind
 
 Ein Import der Daten erfolgt wöchentlich, oder bei der Herausgabe eines neuen Fahrzeuges.
 
-|base_endpoint| */api/vehicles*
 
-
-Alle Raumschiffe
-^^^^^^^^^^^^^^^^
+Alle Bodenfahrzeuge
+^^^^^^^^^^^^^^^^^^^
 |get|
 
-|api_endpoint| */api/vehicles/ground_vehicles*
+|api_endpoint| ``/api/ground-vehicles``
 
 
-Query Parameter:
+|query_param|
 
 =========  =======      =======================================================================================================================  ==============  ========  ========  ========
 Parameter  Typ          Beschreibung                                                                                                             Erlaubte Werte  Optional  Beispiel  Standard
@@ -553,11 +567,8 @@ locale     string       Sprache der zurückgegebenen Daten. Ersatzsprache ist en
 =========  =======      =======================================================================================================================  ==============  ========  ========  ========
 
 
-Beispielausgabe (Ohne Lokalisierung):
-
-**Anfrage URL**: */api/vehicles/ground_vehicles*
-
 .. code-block:: json
+    :caption: |caption_response_no_query_params|
 
     {
       "data": [
@@ -621,7 +632,7 @@ Beispielausgabe (Ohne Lokalisierung):
         }
       ],
       "meta": {
-        "processed_at": "2018-08-27 19:19:34",
+        "processed_at": "2018-08-01 00:00:00",
         "pagination": {
           "total": 9,
           "count": 5,
@@ -629,18 +640,17 @@ Beispielausgabe (Ohne Lokalisierung):
           "current_page": 1,
           "total_pages": 2,
           "links": {
-            "next": "https:\/\/api.star-citizen.wiki\/api\/vehicles\/ground_vehicles?page=2"
+            "next": "https:\/\/api.star-citizen.wiki\/api\/ground-vehicles?page=2"
           }
         }
       }
     }
 
 
-Beispielausgabe (Lokalisierung Deutsch):
-
-**Anfrage URL**: */api/vehicles/ground_vehicles?locale=de_DE*
+|api_endpoint| ``/api/ground-vehicles?locale=de_DE``
 
 .. code-block:: json
+    :caption: |caption_response_german_localisation|
 
     {
       "data": [
@@ -684,7 +694,7 @@ Beispielausgabe (Lokalisierung Deutsch):
         }
       ],
       "meta": {
-        "processed_at": "2018-08-27 19:19:34",
+        "processed_at": "2018-08-01 00:00:00",
         "pagination": {
           "total": 9,
           "count": 5,
@@ -692,7 +702,7 @@ Beispielausgabe (Lokalisierung Deutsch):
           "current_page": 1,
           "total_pages": 2,
           "links": {
-            "next": "https:\/\/api.star-citizen.wiki\/api\/vehicles\/ground_vehicles?page=2"
+            "next": "https:\/\/api.star-citizen.wiki\/api\/ground-vehicles?page=2"
           }
         }
       }
@@ -703,12 +713,12 @@ Einzelnes Bodenfahrzeug
 ^^^^^^^^^^^^^^^^^^^^^^^
 |get|
 
-|api_endpoint| */api/vehicles/ground_vehicles/{Fahrzeug_Name}*
+|api_endpoint| ``/api/ground-vehicles/{Fahrzeug_Name}``
 
 |url_param| Der Name des Fahrzeuges in URL enkodierter Form. Zum Beispiel ``Nova+Tank``
 
 
-Query Parameter:
+|query_param|
 
 =========  =======      =======================================================================================================================  ==============  ========  ========  ========
 Parameter  Typ          Beschreibung                                                                                                             Erlaubte Werte  Optional  Beispiel  Standard
@@ -717,11 +727,10 @@ locale     string       Sprache der zurückgegebenen Daten. Ersatzsprache ist en
 =========  =======      =======================================================================================================================  ==============  ========  ========  ========
 
 
-Beispielausgabe (Ohne Lokalisierung):
-
-**Anfrage URL**: */api/vehicles/ground_vehicles/Cyclone*
+|api_endpoint| ``/api/ground-vehicles/Cyclone``
 
 .. code-block:: json
+    :caption: |caption_response_no_query_params|
 
     {
       "data": {
@@ -777,16 +786,15 @@ Beispielausgabe (Ohne Lokalisierung):
         }
       },
       "meta": {
-        "processed_at": "2018-08-27 19:22:59"
+        "processed_at": "2018-08-01 00:00:00"
       }
     }
 
 
-Beispielausgabe (Lokalisierung Deutsch):
-
-**Anfrage URL**: */api/vehicles/ground_vehicles/Cyclone?locale=de_DE*
+|api_endpoint| ``/api/ground-vehicles/Cyclone?locale=de_DE``
 
 .. code-block:: json
+    :caption: |caption_response_german_localisation|
 
     {
       "data": {
@@ -822,16 +830,15 @@ Beispielausgabe (Lokalisierung Deutsch):
         }
       },
       "meta": {
-        "processed_at": "2018-08-27 19:24:37"
+        "processed_at": "2018-08-01 00:00:00"
       }
     }
 
 
-Beispielausgabe (Fehlerhafter Fahrzeugname):
-
-**Anfrage URL**: */api/vehicles/ground_vehicles/Cyclon*
+|api_endpoint| ``/api/ground-vehicles/Cyclon``
 
 .. code-block:: json
+    :caption: |caption_response_404|
 
     {
       "message": "No Results for Query 'Cyclon'",
@@ -843,13 +850,12 @@ Suche
 ^^^^^
 |post|
 
-|api_endpoint| */api/vehicles/ground_vehicles/search*
+|api_endpoint| ``/api/ground-vehicles/search``
 
-**Request Body**: *query*
-
-Beispielanfrage:
+**Request Body**: ``query``
 
 .. code-block:: php
+    :caption: Beispielanfrage:
 
     $client = new GuzzleHttp\Client([
         'timeout' => 3.0,
@@ -862,15 +868,14 @@ Beispielanfrage:
 
     $res = $client->request(
         'POST',
-        '/vehicles/ground_vehicles/search',
+        '/ground_search',
         [
             'query' => 'Cyclone'
         ]
     );
 
-Ausgabe der Anfrage:
-
 .. code-block:: json
+    :caption: |caption_response|
 
     {
       "data": [
@@ -906,7 +911,7 @@ Ausgabe der Anfrage:
         }
       ],
       "meta": {
-        "processed_at": "2018-08-27 19:26:28",
+        "processed_at": "2018-08-01 00:00:00",
         "pagination": {
           "total": 5,
           "count": 5,
@@ -919,9 +924,8 @@ Ausgabe der Anfrage:
     }
 
 
-Ausgabe einer fehlerhaften Anfrage:
-
 .. code-block:: json
+    :caption: |caption_response_404|
 
     {
       "message": "No Results for Query 'not existent'",
@@ -939,10 +943,10 @@ Alle Hersteller
 ^^^^^^^^^^^^^^^^
 |get|
 
-|api_endpoint| */api/manufacturers*
+|api_endpoint| ``/api/manufacturers``
 
 
-Query Parameter:
+|query_param|
 
 =========  =======      =======================================================================================================================  =====================  ========  ========  ========
 Parameter  Typ          Beschreibung                                                                                                             Erlaubte Werte         Optional  Beispiel  Standard
@@ -950,13 +954,12 @@ Parameter  Typ          Beschreibung                                            
 page       integer      Seite der Ausgabe. Anzahl der Seiten sowie derzeitige Seite stehen in den Metadaten der Ausgabe                                                 Ja        1         1
 limit      integer      Limitiert die Anzahl der Daten auf die angegebene Zahl. Ein Limit von '0' deaktiviert das Limit und gibt alle Daten aus                         Ja        1         10
 locale     string       Sprache der zurückgegebenen Daten. Ersatzsprache ist en_EN (Englisch) bei fehlender deutscher Übersetzung                de_DE en_EN            Ja        de_DE
-with       string       Komma separierter String mit namen der hinzuzufügenden Relationen                                                        ships ground_vehicles  Ja        ships
+with       string       Komma separierter String mit namen der hinzuzufügenden Relationen                                                        ships ground-vehicles  Ja        ships
 =========  =======      =======================================================================================================================  =====================  ========  ========  ========
 
 
-Beispielausgabe (Ohne Lokalisierung):
-
 .. code-block:: json
+    :caption: |caption_response_no_query_params|
 
     {
       "data": [
@@ -990,10 +993,10 @@ Beispielausgabe (Ohne Lokalisierung):
         }
       ],
       "meta": {
-        "processed_at": "2018-08-27 19:30:19",
+        "processed_at": "2018-08-01 00:00:00",
         "valid_relations": [
           "ships",
-          "ground_vehicles"
+          "ground-vehicles"
         ],
         "pagination": {
           "total": 16,
@@ -1013,22 +1016,25 @@ Einzelner Hersteller
 ^^^^^^^^^^^^^^^^^^^^
 |get|
 
-|api_endpoint| */api/manufacturers/{Hersteller_Code}*
+|api_endpoint| ``/api/manufacturers/{Hersteller_Code}``
+
+|url_param| Der Name des Code des Herstellers. Zum Beispiel ``RSI``
 
 
-Query Parameter:
+|query_param|
 
 =========  =======      =======================================================================================================================  =====================  ========  ========  ========
 Parameter  Typ          Beschreibung                                                                                                             Erlaubte Werte         Optional  Beispiel  Standard
 =========  =======      =======================================================================================================================  =====================  ========  ========  ========
 locale     string       Sprache der zurückgegebenen Daten. Ersatzsprache ist en_EN (Englisch) bei fehlender deutscher Übersetzung                de_DE en_EN            Ja        de_DE
-with       string       Komma separierter String mit namen der hinzuzufügenden Relationen                                                        ships ground_vehicles  Ja        ships
+with       string       Komma separierter String mit namen der hinzuzufügenden Relationen                                                        ships ground-vehicles  Ja        ships
 =========  =======      =======================================================================================================================  =====================  ========  ========  ========
 
 
-Beispielausgabe (Ohne Relationen):
+|api_endpoint| ``/api/manufacturers/RSI``
 
 .. code-block:: json
+    :caption: Ausgabe ohne Relationen:
 
     {
       "data": {
@@ -1042,20 +1048,19 @@ Beispielausgabe (Ohne Relationen):
         }
       },
       "meta": {
-        "processed_at": "2018-08-27 19:32:04",
+        "processed_at": "2018-08-01 00:00:00",
         "valid_relations": [
           "ships",
-          "ground_vehicles"
+          "ground-vehicles"
         ]
       }
     }
 
 
-Beispielausgabe (Mit Relation Raumschiffe):
-
-**Anfrage URL**: */api/manufacturers/CRSD?with=ships*
+|api_endpoint| ``/api/manufacturers/CRSD?with=ships``
 
 .. code-block:: json
+    :caption: Ausgabe mit der Relation Raumschiffe:
 
     {
       "data": {
@@ -1076,20 +1081,19 @@ Beispielausgabe (Mit Relation Raumschiffe):
         ]
       },
       "meta": {
-        "processed_at": "2018-08-27 19:37:31",
+        "processed_at": "2018-08-01 00:00:00",
         "valid_relations": [
           "ships",
-          "ground_vehicles"
+          "ground-vehicles"
         ]
       }
     }
 
 
-Beispielausgabe (Mit Relationen Raumschiffe und Bodenfahrzeuge):
-
-**Anfrage URL**: */api/manufacturers/CRSD?with=ships,ground_vehicles*
+|api_endpoint| ``/api/manufacturers/CRSD?with=ships,ground-vehicles``
 
 .. code-block:: json
+    :caption: Ausgabe mit der Relation Raumschiffe und Bodenfahrzeuge:
 
     {
       "data": {
@@ -1108,13 +1112,13 @@ Beispielausgabe (Mit Relationen Raumschiffe und Bodenfahrzeuge):
           "https:\/\/api.star-citizen.wiki\/api\/vehicles\/ships\/A2+Hercules",
           "https:\/\/api.star-citizen.wiki\/api\/vehicles\/ships\/Mercury+Star+Runner"
         ],
-        "ground_vehicles": []
+        "ground-vehicles": []
       },
       "meta": {
-        "processed_at": "2018-08-27 19:38:26",
+        "processed_at": "2018-08-01 00:00:00",
         "valid_relations": [
           "ships",
-          "ground_vehicles"
+          "ground-vehicles"
         ]
       }
     }
@@ -1124,15 +1128,15 @@ Suche
 ^^^^^
 |post|
 
-|api_endpoint| */api/manufacturers/search*
+|api_endpoint| ``/api/manufacturers/search``
 
-**Request Body**: *query*
+**Request Body**: ``query``
 
 Die Suche kann sowohl nach dem Hersteller ``Code`` als auch dem Hersteller ``Namen`` erfolgen, also sowohl ``RSI`` als auch ``Roberts``
 
-Beispielanfrage:
 
 .. code-block:: php
+    :caption: Beispielanfrage:
 
     $client = new GuzzleHttp\Client([
         'timeout' => 3.0,
@@ -1151,9 +1155,8 @@ Beispielanfrage:
         ]
     );
 
-Ausgabe der Anfrage:
-
 .. code-block:: json
+    :caption: |caption_response|
 
     {
       "data": [
@@ -1169,10 +1172,10 @@ Ausgabe der Anfrage:
         }
       ],
       "meta": {
-        "processed_at": "2018-08-27 19:40:26",
+        "processed_at": "2018-08-01 00:00:00",
         "valid_relations": [
           "ships",
-          "ground_vehicles"
+          "ground-vehicles"
         ],
         "pagination": {
           "total": 1,
@@ -1186,9 +1189,8 @@ Ausgabe der Anfrage:
     }
 
 
-Ausgabe einer fehlerhaften Anfrage:
-
 .. code-block:: json
+    :caption: |caption_response_404|
 
     {
       "message": "No Results for Query 'not existent'",
@@ -1201,8 +1203,15 @@ Ausgabe einer fehlerhaften Anfrage:
 
 
 
-.. |get| replace:: **Anfragetyp**: *GET*
-.. |post| replace:: **Anfragetyp**: *POST*
+.. |get| replace:: **Anfragetyp**: ``GET``
+.. |post| replace:: **Anfragetyp**: ``POST``
+
 .. |url_param| replace:: **URL Parameter**:
+.. |query_param| replace:: **Query Parameter**:
+
 .. |api_endpoint| replace:: **API Anfragepunkt**:
-.. |base_endpoint| replace:: **Basis API Anfragepunkt**:
+
+.. |caption_response| replace:: Ausgabe der Anfrage:
+.. |caption_response_no_query_params| replace:: Ausgabe der Anfrage ohne Query Parameter:
+.. |caption_response_german_localisation| replace:: Ausgabe der Anfrage mit deutschen Übersetzungen:
+.. |caption_response_404| replace:: Ausgabe einer fehlerhaften Anfrage
