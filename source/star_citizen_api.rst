@@ -210,7 +210,8 @@ locale     string       Sprache der zurückgegebenen Daten. Ersatzsprache ist en
           "manufacturer": {
             "code": "RSI",
             "name": "Roberts Space Industries"
-          }
+          },
+          "updated_at": "2017-10-24 19:42:39"
         },
         {
           "id": 2,
@@ -282,7 +283,8 @@ locale     string       Sprache der zurückgegebenen Daten. Ersatzsprache ist en
           "manufacturer": {
             "code": "RSI",
             "name": "Roberts Space Industries"
-          }
+          },
+          "updated_at": "2017-10-24 19:42:39"
         },
         {
           "id": 2,
@@ -387,7 +389,8 @@ locale     string       Sprache der zurückgegebenen Daten. Ersatzsprache ist en
         "manufacturer": {
           "code": "ORIG",
           "name": "Origin Jumpworks GmbH"
-        }
+        },
+        "updated_at": "2017-10-24 19:42:39"
       },
       "meta": {
         "processed_at": "2018-08-01 00:00:00"
@@ -441,7 +444,8 @@ locale     string       Sprache der zurückgegebenen Daten. Ersatzsprache ist en
         "manufacturer": {
           "code": "ORIG",
           "name": "Origin Jumpworks GmbH"
-        }
+        },
+        "updated_at": "2017-10-24 19:42:39"
       },
       "meta": {
         "processed_at": "2018-08-01 00:00:00"
@@ -553,7 +557,7 @@ Alle Bodenfahrzeuge
 ^^^^^^^^^^^^^^^^^^^
 |get|
 
-|api_endpoint| ``/api/ground-vehicles``
+|api_endpoint| ``/api/vehicles``
 
 
 |query_param|
@@ -622,7 +626,8 @@ locale     string       Sprache der zurückgegebenen Daten. Ersatzsprache ist en
           "manufacturer": {
             "code": "TMBL",
             "name": "Tumbril"
-          }
+          },
+          "updated_at": "2017-10-24 19:42:39"
         },
         {
           "id": 135,
@@ -647,7 +652,7 @@ locale     string       Sprache der zurückgegebenen Daten. Ersatzsprache ist en
     }
 
 
-|api_endpoint| ``/api/ground-vehicles?locale=de_DE``
+|api_endpoint| ``/api/vehicles?locale=de_DE``
 
 .. code-block:: json
     :caption: |caption_response_german_localisation|
@@ -684,7 +689,8 @@ locale     string       Sprache der zurückgegebenen Daten. Ersatzsprache ist en
           "manufacturer": {
             "code": "TMBL",
             "name": "Tumbril"
-          }
+          },
+          "updated_at": "2017-10-24 19:42:39"
         },
         {
           "id": 135,
@@ -713,7 +719,7 @@ Einzelnes Bodenfahrzeug
 ^^^^^^^^^^^^^^^^^^^^^^^
 |get|
 
-|api_endpoint| ``/api/ground-vehicles/{Fahrzeug_Name}``
+|api_endpoint| ``/api/vehicles/{Fahrzeug_Name}``
 
 |url_param| Der Name des Fahrzeuges in URL enkodierter Form. Zum Beispiel ``Nova+Tank``
 
@@ -727,7 +733,7 @@ locale     string       Sprache der zurückgegebenen Daten. Ersatzsprache ist en
 =========  =======      =======================================================================================================================  ==============  ========  ========  ========
 
 
-|api_endpoint| ``/api/ground-vehicles/Cyclone``
+|api_endpoint| ``/api/vehicles/Cyclone``
 
 .. code-block:: json
     :caption: |caption_response_no_query_params|
@@ -783,7 +789,8 @@ locale     string       Sprache der zurückgegebenen Daten. Ersatzsprache ist en
         "manufacturer": {
           "code": "TMBL",
           "name": "Tumbril"
-        }
+        },
+        "updated_at": "2017-10-24 19:42:39"
       },
       "meta": {
         "processed_at": "2018-08-01 00:00:00"
@@ -791,7 +798,7 @@ locale     string       Sprache der zurückgegebenen Daten. Ersatzsprache ist en
     }
 
 
-|api_endpoint| ``/api/ground-vehicles/Cyclone?locale=de_DE``
+|api_endpoint| ``/api/vehicles/Cyclone?locale=de_DE``
 
 .. code-block:: json
     :caption: |caption_response_german_localisation|
@@ -827,7 +834,8 @@ locale     string       Sprache der zurückgegebenen Daten. Ersatzsprache ist en
         "manufacturer": {
           "code": "TMBL",
           "name": "Tumbril"
-        }
+        },
+        "updated_at": "2017-10-24 19:42:39"
       },
       "meta": {
         "processed_at": "2018-08-01 00:00:00"
@@ -835,7 +843,7 @@ locale     string       Sprache der zurückgegebenen Daten. Ersatzsprache ist en
     }
 
 
-|api_endpoint| ``/api/ground-vehicles/Cyclon``
+|api_endpoint| ``/api/vehicles/Cyclon``
 
 .. code-block:: json
     :caption: |caption_response_404|
@@ -850,7 +858,7 @@ Suche
 ^^^^^
 |post|
 
-|api_endpoint| ``/api/ground-vehicles/search``
+|api_endpoint| ``/api/vehicles/search``
 
 **Request Body**: ``query``
 
@@ -954,7 +962,7 @@ Parameter  Typ          Beschreibung                                            
 page       integer      Seite der Ausgabe. Anzahl der Seiten sowie derzeitige Seite stehen in den Metadaten der Ausgabe                                                 Ja        1         1
 limit      integer      Limitiert die Anzahl der Daten auf die angegebene Zahl. Ein Limit von '0' deaktiviert das Limit und gibt alle Daten aus                         Ja        1         10
 locale     string       Sprache der zurückgegebenen Daten. Ersatzsprache ist en_EN (Englisch) bei fehlender deutscher Übersetzung                de_DE en_EN            Ja        de_DE
-with       string       Komma separierter String mit namen der hinzuzufügenden Relationen                                                        ships ground-vehicles  Ja        ships
+include    string       Komma separierter String mit namen der hinzuzufügenden Relationen                                                        ships vehicles         Ja        ships
 =========  =======      =======================================================================================================================  =====================  ========  ========  ========
 
 
@@ -1027,7 +1035,7 @@ Einzelner Hersteller
 Parameter  Typ          Beschreibung                                                                                                             Erlaubte Werte         Optional  Beispiel  Standard
 =========  =======      =======================================================================================================================  =====================  ========  ========  ========
 locale     string       Sprache der zurückgegebenen Daten. Ersatzsprache ist en_EN (Englisch) bei fehlender deutscher Übersetzung                de_DE en_EN            Ja        de_DE
-with       string       Komma separierter String mit namen der hinzuzufügenden Relationen                                                        ships ground-vehicles  Ja        ships
+include    string       Komma separierter String mit namen der hinzuzufügenden Relationen                                                        ships vehicles         Ja        ships
 =========  =======      =======================================================================================================================  =====================  ========  ========  ========
 
 
@@ -1057,7 +1065,7 @@ with       string       Komma separierter String mit namen der hinzuzufügenden 
     }
 
 
-|api_endpoint| ``/api/manufacturers/CRSD?with=ships``
+|api_endpoint| ``/api/manufacturers/CRSD?include=ships``
 
 .. code-block:: json
     :caption: Ausgabe mit der Relation Raumschiffe:
@@ -1072,25 +1080,47 @@ with       string       Komma separierter String mit namen der hinzuzufügenden 
         "description": {
           "en_EN": "Genesis Starliner"
         },
-        "ships": [
-          "https:\/\/api.star-citizen.wiki\/api\/vehicles\/ships\/Genesis+Starliner",
-          "https:\/\/api.star-citizen.wiki\/api\/vehicles\/ships\/C2+Hercules",
-          "https:\/\/api.star-citizen.wiki\/api\/vehicles\/ships\/M2+Hercules",
-          "https:\/\/api.star-citizen.wiki\/api\/vehicles\/ships\/A2+Hercules",
-          "https:\/\/api.star-citizen.wiki\/api\/vehicles\/ships\/Mercury+Star+Runner"
-        ]
+        "ships": {
+          "data": [
+            {
+              "name": "Genesis Starliner",
+              "slug": "genesis-starliner",
+              "api_url": "http:\/\/api.star-citizen.wiki\/api\/ships\/genesis-starliner"
+            },
+            {
+              "name": "C2 Hercules",
+              "slug": "c2-hercules",
+              "api_url": "http:\/\/api.star-citizen.wiki\/api\/ships\/c2-hercules"
+            },
+            {
+              "name": "M2 Hercules",
+              "slug": "m2-hercules",
+              "api_url": "http:\/\/api.star-citizen.wiki\/api\/ships\/m2-hercules"
+            },
+            {
+              "name": "A2 Hercules",
+              "slug": "a2-hercules",
+              "api_url": "http:\/\/api.star-citizen.wiki\/api\/ships\/a2-hercules"
+            },
+            {
+              "name": "Mercury Star Runner",
+              "slug": "mercury-star-runner",
+              "api_url": "http:\/\/api.star-citizen.wiki\/api\/ships\/mercury-star-runner"
+            }
+          ]
+        },
       },
       "meta": {
         "processed_at": "2018-08-01 00:00:00",
         "valid_relations": [
           "ships",
-          "ground-vehicles"
+          "vehicles"
         ]
       }
     }
 
 
-|api_endpoint| ``/api/manufacturers/CRSD?with=ships,ground-vehicles``
+|api_endpoint| ``/api/manufacturers/CRSD?include=ships,vehicles``
 
 .. code-block:: json
     :caption: Ausgabe mit der Relation Raumschiffe und Bodenfahrzeuge:
@@ -1105,20 +1135,44 @@ with       string       Komma separierter String mit namen der hinzuzufügenden 
         "description": {
           "en_EN": "Genesis Starliner"
         },
-        "ships": [
-          "https:\/\/api.star-citizen.wiki\/api\/vehicles\/ships\/Genesis+Starliner",
-          "https:\/\/api.star-citizen.wiki\/api\/vehicles\/ships\/C2+Hercules",
-          "https:\/\/api.star-citizen.wiki\/api\/vehicles\/ships\/M2+Hercules",
-          "https:\/\/api.star-citizen.wiki\/api\/vehicles\/ships\/A2+Hercules",
-          "https:\/\/api.star-citizen.wiki\/api\/vehicles\/ships\/Mercury+Star+Runner"
-        ],
-        "ground-vehicles": []
+        "ships": {
+          "data": [
+            {
+              "name": "Genesis Starliner",
+              "slug": "genesis-starliner",
+              "api_url": "http:\/\/api.star-citizen.wiki\/api\/ships\/genesis-starliner"
+            },
+            {
+              "name": "C2 Hercules",
+              "slug": "c2-hercules",
+              "api_url": "http:\/\/api.star-citizen.wiki\/api\/ships\/c2-hercules"
+            },
+            {
+              "name": "M2 Hercules",
+              "slug": "m2-hercules",
+              "api_url": "http:\/\/api.star-citizen.wiki\/api\/ships\/m2-hercules"
+            },
+            {
+              "name": "A2 Hercules",
+              "slug": "a2-hercules",
+              "api_url": "http:\/\/api.star-citizen.wiki\/api\/ships\/a2-hercules"
+            },
+            {
+              "name": "Mercury Star Runner",
+              "slug": "mercury-star-runner",
+              "api_url": "http:\/\/api.star-citizen.wiki\/api\/ships\/mercury-star-runner"
+            }
+          ]
+        },
+        "vehicles": {
+          "data": []
+        }
       },
       "meta": {
         "processed_at": "2018-08-01 00:00:00",
         "valid_relations": [
           "ships",
-          "ground-vehicles"
+          "vehicles"
         ]
       }
     }
@@ -1197,6 +1251,140 @@ Die Suche kann sowohl nach dem Hersteller ``Code`` als auch dem Hersteller ``Nam
       "status_code": 404
     }
 
+
+
+Comm Links
+----------
+API zur Abfrage zu Comm Link Metadaten.
+
+Eine Prüfung auf neue Comm Links erfolgt stündlich
+
+
+Alle Comm Links
+^^^^^^^^^^^^^^^
+|get|
+
+|api_endpoint| ``/api/comm-links``
+
+
+|query_param|
+
+=========  =======      =======================================================================================================================  ==============  ========  ========  ========
+Parameter  Typ          Beschreibung                                                                                                             Erlaubte Werte  Optional  Beispiel  Standard
+=========  =======      =======================================================================================================================  ==============  ========  ========  ========
+page       integer      Seite der Ausgabe. Anzahl der Seiten sowie derzeitige Seite stehen in den Metadaten der Ausgabe                                          Ja        1         1
+limit      integer      Limitiert die Anzahl der Daten auf die angegebene Zahl. Ein Limit von '0' deaktiviert das Limit und gibt alle Daten aus                  Ja        1         10
+=========  =======      =======================================================================================================================  ==============  ========  ========  ========
+
+
+.. code-block:: json
+    :caption: |caption_response_no_query_params|
+
+    {
+      "data": [
+        {
+          "id": 12705,
+          "title": "2610: Tears of Fire",
+          "rsi_url": "https:\/\/robertsspaceindustries.com\/comm-link\/spectrum-dispatch\/12705-2610-Tears-Of-Fire",
+          "api_url": "http:\/\/api.star-citizen.wiki\/api\/comm-links\/12705",
+          "channel": "Lore",
+          "category": "Spectrum Dispatch",
+          "series": "Time Capsule",
+          "images": 2,
+          "links": 0,
+          "created_at": "2012-09-28"
+        },
+        {
+          "id": "...",
+        }
+      ],
+      "meta": {
+        "processed_at": "2018-08-01 00:00:00",
+        "pagination": {
+          "total": 4500,
+          "count": 15,
+          "per_page": 15,
+          "current_page": 1,
+          "total_pages":400,
+          "links": {
+            "next": "https:\/\/api.star-citizen.wiki\/api\/comm-links?page=2"
+          }
+        }
+      }
+    }
+
+
+|api_endpoint| ``/api/comm-links?limit=1``
+
+.. code-block:: json
+    :caption: Ausgabe der Anfrage mit Limit Parameter = 1:
+
+    {
+      "data": [
+        {
+          "id": 12705,
+          "title": "2610: Tears of Fire",
+          "rsi_url": "https:\/\/robertsspaceindustries.com\/comm-link\/spectrum-dispatch\/12705-2610-Tears-Of-Fire",
+          "api_url": "http:\/\/api.star-citizen.wiki\/api\/comm-links\/12705",
+          "channel": "Lore",
+          "category": "Spectrum Dispatch",
+          "series": "Time Capsule",
+          "images": 2,
+          "links": 0,
+          "created_at": "2012-09-28"
+        }
+      ],
+      "meta": {
+        "processed_at": "2018-08-01 00:00:00",
+        "pagination": {
+          "total": 4500,
+          "count": 1,
+          "per_page": 1,
+          "current_page": 1,
+          "total_pages": 4500,
+          "links": {
+            "next": "https:\/\/api.star-citizen.wiki\/api\/comm-links?page=2"
+          }
+        }
+      }
+    }
+
+
+
+Einzelner Comm Link
+^^^^^^^^^^^^^^^^^^^
+|get|
+
+|api_endpoint| ``/api/comm-links/{CommLinkID}``
+
+.. code-block:: json
+    :caption: |caption_response|
+
+    {
+      "data": {
+        "id": 12663,
+        "title": "Test",
+        "rsi_url": "https:\/\/robertsspaceindustries.com\/comm-link\/SCW\/12663-API",
+        "api_url": "http:\/\/api.star-citizen.wiki\/api\/comm-links\/12663",
+        "channel": "Undefined",
+        "category": "Undefined",
+        "series": "None",
+        "images": {
+          "data": []
+        },
+        "links": {
+          "data": []
+        },
+        "created_at": "2012-01-01"
+      },
+      "meta": {
+        "processed_at": "2018-09-27 21:39:49",
+        "valid_relations": [
+          "images",
+          "links"
+        ]
+      }
+    }
 
 
 
