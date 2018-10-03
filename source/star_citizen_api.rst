@@ -149,69 +149,70 @@ locale     string       Sprache der zurückgegebenen Daten. Ersatzsprache ist en
 
     {
       "data": [
-        "id": 1,
-        "chassis_id": 1,
-        "name": "Aurora ES",
-        "slug": "aurora-es",
-        "sizes": {
-          "length": "118.00",
-          "beam": "8.00",
-          "height": "4.00"
-        },
-        "mass": 25172,
-        "cargo_capacity": 0,
-        "crew": {
-          "min": 1,
-          "max": 1
-        },
-        "speed": {
-          "scm": 190,
-          "afterburner": 1140
-        },
-        "agility": {
-          "pitch": "70.00",
-          "yaw": "70.00",
-          "roll": "95.00",
-          "acceleration": {
-            "x_axis": "43.00",
-            "y_axis": "45.70",
-            "z_axis": "44.20"
-          }
-        },
-        "foci": [
-          {
-            "en_EN": "Starter",
-            "de_DE": "Einsteiger"
+        {
+          "id": 1,
+          "chassis_id": 1,
+          "name": "Aurora ES",
+          "slug": "aurora-es",
+          "sizes": {
+            "length": "118.00",
+            "beam": "8.00",
+            "height": "4.00"
           },
-          {
-            "en_EN": "Pathfinder",
-            "de_DE": "Pfadfinder"
-          }
-        ],
-        "production_status": {
-          "en_EN": "flight-ready",
-          "de_DE": "Flugbereit"
-        },
-        "production_note": {
-          "en_EN": "None",
-          "de_DE": "Keine"
-        },
-        "type": {
-          "en_EN": "multi",
-          "de_DE": "Mehrzweck"
-        },
-        "description": {
-          "en_EN": "The Aurora is the modern-day descendant of the Roberts Space Industries X-7 spacecraft which tested the very first jump engines. Utilitarian to a T, the Aurora Essential is the perfect choice for new ship owners: versatile enough to tackle a myriad of challenges, yet with a straightforward and intuitive design."
-        },
-        "size": {
-          "en_EN": "small",
-          "de_DE": "Klein"
-        },
-        "manufacturer": {
-          "code": "RSI",
-          "name": "Roberts Space Industries"
-        },
-        "updated_at": "2017-10-24 19:40:49"
+          "mass": 25172,
+          "cargo_capacity": 0,
+          "crew": {
+            "min": 1,
+            "max": 1
+          },
+          "speed": {
+            "scm": 190,
+            "afterburner": 1140
+          },
+          "agility": {
+            "pitch": "70.00",
+            "yaw": "70.00",
+            "roll": "95.00",
+            "acceleration": {
+              "x_axis": "43.00",
+              "y_axis": "45.70",
+              "z_axis": "44.20"
+            }
+          },
+          "foci": [
+            {
+              "en_EN": "Starter",
+              "de_DE": "Einsteiger"
+            },
+            {
+              "en_EN": "Pathfinder",
+              "de_DE": "Pfadfinder"
+            }
+          ],
+          "production_status": {
+            "en_EN": "flight-ready",
+            "de_DE": "Flugbereit"
+          },
+          "production_note": {
+            "en_EN": "None",
+            "de_DE": "Keine"
+          },
+          "type": {
+            "en_EN": "multi",
+            "de_DE": "Mehrzweck"
+          },
+          "description": {
+            "en_EN": "The Aurora is the modern-day descendant of the Roberts Space Industries X-7 spacecraft which tested the very first jump engines. Utilitarian to a T, the Aurora Essential is the perfect choice for new ship owners: versatile enough to tackle a myriad of challenges, yet with a straightforward and intuitive design."
+          },
+          "size": {
+            "en_EN": "small",
+            "de_DE": "Klein"
+          },
+          "manufacturer": {
+            "code": "RSI",
+            "name": "Roberts Space Industries"
+          },
+          "updated_at": "2017-10-24 19:40:49"
         },
         {
           "id": 2,
