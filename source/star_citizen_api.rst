@@ -1380,7 +1380,7 @@ include    string       Komma separierter String mit Namen der hinzuzufügenden 
             "data": [
               {
                 "rsi_url": "https:\/\/robertsspaceindustries.com\/media\/ry9g91yedn3atr\/source\/10_For_The_Chairman_Embed_6.png",
-                "api_url": "https:\/\/api.star-citizen.wiki\/storage\/comm_link_images/ry9g91yedn3atr\/10_For_The_Chairman_Embed_6.png",
+                "api_url": "https:\/\/api.star-citizen.wiki\/storage\/comm_link_images\/ry9g91yedn3atr\/10_For_The_Chairman_Embed_6.png",
                 "alt": "#post-background"
               }
             ]
